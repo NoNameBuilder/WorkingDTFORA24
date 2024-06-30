@@ -1,0 +1,110 @@
+on init
+
+# Create the mountpoint for mnt/vendor partitions
+    mkdir /sys/class/sec 0771 root root
+    restorecon_recursive /sys/class/sec/tsp
+    restorecon /sys/class/sec/tsp/cmd
+
+# Touch Panel
+# chmod 0664 /dev/touch
+    chown root diag /sys/module/tpd_setting/parameters/tpd_calmat
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time
+    chown root diag /sys/module/tpd_setting/parameters/tpd_mode
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time0
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time1
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_spl_num
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_pressure_threshold
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_auto_time_interval
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_sample_cnt
+    chown root diag /sys/module/tpd_setting/parameters/tpd_em_asamp
+    chown root diag /sys/module/tpd_debug/parameters/tpd_em_log
+    chown root diag /sys/module/tpd_debug/parameters/tpd_em_log_to_fs
+
+
+# Permissions for Touchscreen
+    chown system radio /sys/class/sec/tsp/cmd
+    chown system system /sys/class/sec/tsp/input/enabled
+    chown system system /sys/class/sec/tsp/enabled
+    chmod 0660 /sys/class/sec/tsp/input/enabled
+    chown root system /proc/tsp_msg
+    chmod 0440 /proc/tsp_msg
+    chown system system /sys/class/sec/tsp/multi_count
+    chown system system /sys/class/sec/tsp/wet_mode
+    chown system system /sys/class/sec/tsp/noise_mode
+    chown system system /sys/class/sec/tsp/comm_err_count
+    chown system system /sys/class/sec/tsp/checksum
+    chown system system /sys/class/sec/tsp/all_touch_count
+    chown system system /sys/class/sec/tsp/z_value
+    chown system system /sys/class/sec/tsp/sensitivity_mode
+    chown system system /sys/class/sec/tsp/prox_power_off
+    chown system system /sys/class/sec/tsp/ic_reset_count
+    chown system system /sys/class/sec/tsp/mode_change_failed_count
+    chown system system /dev/tspio
+    chown system system /sys/class/sec/tsp/ear_detect_enable
+    chown system system /sys/class/sec/tsp/hw_param
+    chown system system /sys/class/sec/tsp/dualscreen_policy
+
+ # Permissions for Touchscreen-1
+    chown system radio /sys/class/sec/tsp1/cmd
+    chown system system /sys/class/sec/tsp1/input/enabled
+    chown system system /sys/class/sec/tsp1/enabled
+    chmod 0660 /sys/class/sec/tsp1/input/enabled
+    chown system system /sys/class/sec/tsp1/sensitivity_mode
+    chown system system /sys/class/sec/tsp1/prox_power_off
+    chown system system /sys/class/sec/tsp1/hw_param
+    chown system system /sys/class/sec/tsp1/dualscreen_policy
+
+ # Permissions for Touchscreen-2
+    chown system radio /sys/class/sec/tsp2/cmd
+    chown system system /sys/class/sec/tsp2/input/enabled
+    chown system system /sys/class/sec/tsp2/enabled
+    chmod 0660 /sys/class/sec/tsp2/input/enabled
+    chown system system /sys/class/sec/tsp2/sensitivity_mode
+    chown system system /sys/class/sec/tsp2/prox_power_off
+    chown system system /sys/class/sec/tsp2/hw_param
+    chown system system /sys/class/sec/tsp2/dualscreen_policy
+
+ # Permission for Securetouch
+    chown system system /sys/class/sec/ss_touch/secure/secure_touch_enable
+    chown system system /sys/class/sec/tsp/input/secure_touch_enable
+    chown system system /sys/class/sec/tsp1/input/secure_touch_enable
+    chown system system /sys/class/sec/tsp2/input/secure_touch_enable
+
+    chown system radio /sys/class/sec/tsp1/cmd
+    chown system system /sys/class/sec/tsp1/input/enabled
+    chmod 0660 /sys/class/sec/tsp1/input/enabled
+    chown system radio /sys/class/sec/tsp2/cmd
+    chown system system /sys/class/sec/tsp2/input/enabled
+    chmod 0660 /sys/class/sec/tsp2/input/enabled
+
+    # Permissions for Touchscreen
+    chown system radio /sys/class/sec/tsp/cmd
+    chown system system /sys/class/sec/tsp/input/enabled
+    chmod 0660 /sys/class/sec/tsp/input/enabled
+    chown system system /sys/class/sec/tsp/enabled
+    chmod 0660 /sys/class/sec/tsp/enabled
+
+    # Send Touchscreen fix commands
+    write /sys/class/sec/tsp/cmd aot_enable,1
+    write /sys/class/sec/tsp/cmd check_connection
+    write /sys/class/sec/tsp/enabled 1,0
+    write /sys/class/sec/tsp/enabled 2,1
+
+    # Send Touchscreen fix commands
+    write /sys/class/sec/tsp1/cmd aot_enable,1
+    write /sys/class/sec/tsp1/cmd check_connection
+    write /sys/class/sec/tsp1/enabled 1,0
+    write /sys/class/sec/tsp1/enabled 2,1
+
+    # Permissions for Touchscreen
+    chown system radio /sys/class/sec/tsp/cmd
+    chown system system /sys/class/sec/tsp/input/enabled
+    chmod 0660 /sys/class/sec/tsp/input/enabled
+    chown system system /sys/class/sec/tsp/enabled
+    chmod 0660 /sys/class/sec/tsp/enabled
+
+    # Send Touchscreen fix commands
+    write /sys/class/sec/tsp2/cmd aot_enable,1
+    write /sys/class/sec/tsp2/cmd check_connection
+    write /sys/class/sec/tsp2/enabled 1,0
+    write /sys/class/sec/tsp2/enabled 2,1
