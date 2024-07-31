@@ -5,8 +5,8 @@ system                                               /system       f2fs        	
 vendor                                               /vendor       erofs        ro    avb,logical,first_stage_mount
 product                                              /product      erofs        ro    avb,logical,first_stage_mount
 odm                                                  /odm          erofs        ro    avb,logical,first_stage_mount
-vendor_dlkm                                          /vendor_dlkm        erofs        avb,logical,first_stage_mount
-system_ext                                           /system_ext         erofs        avb,logical,first_stage_mount
+vendor_dlkm                                          /vendor_dlkm        erofs        ro    avb,logical,first_stage_mount
+system_ext                                           /system_ext         erofs        ro    avb,logical,first_stage_mount
 
 /dev/block/platform/bootdevice/by-name/md_udc      /metadata     ext4        defaults                  wait,first_stage_mount
 /dev/block/by-name/userdata      		   /data         f2fs        defaults                  wait,length=-16384

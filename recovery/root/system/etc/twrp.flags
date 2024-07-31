@@ -11,7 +11,7 @@
 /prism			ext4		/dev/block/by-name/prism							flags=backup=1;flashimg;display="Prism"
 /metadata		ext4		/dev/block/platform/bootdevice/by-name/md_udc		flags=display="Metadata";wipeingui;wipeduringfactoryreset
 /data			f2fs		/dev/block/by-name/userdata							flags=length=-16384;fileencryption=aes-256-xts:aes-256-cts:v1
-/cache          ext4      	/dev/block/platform/bootdevice/by-name/cache      	flags=display="Cache";wipeingui;wipeduringfactoryreset
+/cache          ext4      	/dev/block/by-name/cache      	                flags=display="Cache";wipeingui;wipeduringfactoryreset
 
 
 # FOTA

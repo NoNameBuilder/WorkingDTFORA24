@@ -1,0 +1,11 @@
+cc_binary {
+    name: "shrink",
+    recovery_available: true,
+    srcs: ["shrink.c"],
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-O3",
+        "-g",
+    ],
+}
