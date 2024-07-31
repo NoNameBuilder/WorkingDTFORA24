@@ -106,7 +106,7 @@ PLATFORM_VERSION := 16.1.0
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION := buy_other_phone
+TW_DEVICE_VERSION := a24
 TW_DEFAULT_BRIGHTNESS := 250
 TW_EXTRA_LANGUAGES := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
