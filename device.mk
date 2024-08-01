@@ -13,3 +13,6 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 PRODUCT_PACKAGES += shrink
+
+# Dynamic Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
