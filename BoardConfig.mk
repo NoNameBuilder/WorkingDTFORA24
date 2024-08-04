@@ -1,6 +1,9 @@
 DEVICE_PATH := device/samsung/a24
 
 # For building with minimal manifest
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+SOONG_ALLOW_MISSING_DEPENDENCIES := true
 ALLOW_MISSING_DEPENDENCIES := true
 
 # Architecture
@@ -76,8 +79,6 @@ BOARD_SUPER_PARTITION_SIZE := 11744051200
 BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     system \
-    system \
-    system \
     vendor \
     product \
     odm \
@@ -143,7 +144,6 @@ TW_LOAD_VENDOR_MODULES := "goodix_ts_berlin.ko"
 TW_LOAD_VENDOR_BOOT_MODULES := true
 TW_LOAD_VENDOR_MODULES := "goodix_ts_berlin.ko"
 TW_FRAMERATE := 70
-BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_USE_SAMSUNG_HAPTICS := true
 TARGET_USES_MKE2FS := true
