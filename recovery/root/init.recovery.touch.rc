@@ -108,3 +108,6 @@ on init
     write /sys/class/sec/tsp2/cmd check_connection
     write /sys/class/sec/tsp2/enabled 1,0
     write /sys/class/sec/tsp2/enabled 2,1
+
+    # Load touchscreen driver
+    insmod /vendor/lib/modules/goodix_ts_berlin.ko
