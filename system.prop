@@ -1,0 +1,9 @@
+# Device
+ro.display.series=Samsung Galaxy A24
+
+# Platform
+ro.product.board=mt6789
+ro.board.platform=mt6789
+
+# Dynamic partitions
+ro.boot.dynamic_partitions=true
