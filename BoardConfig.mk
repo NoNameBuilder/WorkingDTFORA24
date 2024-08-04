@@ -1,9 +1,3 @@
-# Copyright (C) 2024 The Android Open Source Project
-# Copyright (C) 2024 SebaUbuntu's TWRP device tree generator
-#
-# SPDX-License-Identifier: Apache-2.0
-#
-
 DEVICE_PATH := device/samsung/a24
 
 # For building with minimal manifest
@@ -31,36 +25,43 @@ DEXPREOPT_GENERATE_APEX_IMAGE := true
 TARGET_BOOTLOADER_BOARD_NAME := a24
 TARGET_NO_BOOTLOADER := true
 
+# MTK Chipsets only
+BOARD_USES_MTK_HARDWARE := true
+BOARD_HAS_MTK_HARDWARE := true
+MTK_HARDWARE := true
+
 # Display
 TARGET_SCREEN_DENSITY := 450
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 
+# Assert
+TARGET_OTA_ASSERT_DEVICE := a24
+
 # Kernel
+# Kernel config
 BOARD_BOOTIMG_HEADER_VERSION := 2
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
 BOARD_KERNEL_BASE := 0x3fff8000
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 loop.max_part=7
-BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RAMDISK_OFFSET := 0x26f08000
 BOARD_KERNEL_TAGS_OFFSET := 0x07c88000
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
-BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
-BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-BOARD_KERNEL_IMAGE_NAME := Image
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-BOARD_KERNEL_SEPARATED_DTBO := true
-TARGET_KERNEL_CONFIG := a24_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/a24
-
-# Kernel - prebuilt
-TARGET_FORCE_PREBUILT_KERNEL := true
-ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
+BOARD_KERNEL_PAGESIZE := 4096
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
-BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
-BOARD_INCLUDE_DTB_IN_BOOTIMG := 
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
+BOARD_KERNEL_CMDLINE := \
+    bootopt=64S3,32N2,64N2 \
+    loop.max_part=7 \
+    androidboot.selinux=permissive
+BOARD_MKBOOTIMG_ARGS += \
+    --header_version $(BOARD_BOOTIMG_HEADER_VERSION) \
+    --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
+    --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) \
+    --dtb $(TARGET_PREBUILT_DTB)
+TARGET_FORCE_PREBUILT_KERNEL := true
+BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_INCLUDE_DTB_IN_BOOTIMG := 
 BOARD_KERNEL_SEPARATED_DTBO := 
-endif
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -73,7 +74,15 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
 TARGET_COPY_OUT_VENDOR := vendor
 BOARD_SUPER_PARTITION_SIZE := 11744051200
 BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
-BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system system system vendor product odm vendor_dlkm system_ext
+BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := \
+    system \
+    system \
+    system \
+    vendor \
+    product \
+    odm \
+    vendor_dlkm \
+    system_ext
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 5867831296
 
 # Platform
@@ -85,9 +94,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
-
-# Security patch level
-VENDOR_SECURITY_PATCH := 2021-08-01
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -142,3 +149,6 @@ TW_USE_SAMSUNG_HAPTICS := true
 TARGET_USES_MKE2FS := true
 TW_INCLUDE_FASTBOOTD := true
 TW_INCLUDE_FUSE_EXFAT := true
+TW_INCLUDE_LPDUMP := true
+TW_INCLUDE_LPTOOLS := true
+TW_BACKUP_EXCLUSIONS := /data/fonts

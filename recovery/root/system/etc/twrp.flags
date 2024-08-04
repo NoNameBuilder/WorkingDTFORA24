@@ -13,7 +13,6 @@
 /data			f2fs		/dev/block/by-name/userdata							flags=length=-16384;fileencryption=aes-256-xts:aes-256-cts:v1
 /cache          ext4      	/dev/block/by-name/cache      	                flags=display="Cache";wipeingui;wipeduringfactoryreset
 
-
 # FOTA
 /dsp			emmc		/dev/block/by-name/dsp
 /dtbo			emmc		/dev/block/by-name/dtbo								flags=backup=1;display="Dtbo"
@@ -25,7 +24,6 @@
 /gz1			emmc		/dev/block/by-name/gz1
 /optics_image	emmc		/dev/block/by-name/optics							flags=backup=1;display="Optics Image";flashimg=1
 /param			emmc		/dev/block/by-name/param							flags=backup=1;display="Param"
-
 
 # Physical partitions - Important Data - Must Backup
 /efs			emmc		/dev/block/by-name/efs								flags=backup=1;display="EFS"
@@ -47,13 +45,10 @@
 /prism_image	emmc		/dev/block/by-name/prism							flags=backup=1;display="Prism Image";flashimg=1
 /up_param		emmc		/dev/block/by-name/up_param							flags=backup=1;display="Logo";flashimg=1
 
-
 /vbmeta     	   emmc      /dev/block/platform/bootdevice/by-name/vbmeta    		 flags=backup=1;display="Vbmeta";flashimg=1
 /vbmeta_system     emmc      /dev/block/platform/bootdevice/by-name/vbmeta_system    flags=backup=1;display="Vbmeta System";flashimg=1
 /vbmeta_vendor     emmc      /dev/block/platform/bootdevice/by-name/vbmeta_vendor    flags=backup=1;display="Vbmeta Vendor";flashimg=1
 
-
-
 # External storage
-/external_sd	vfat		/dev/block/mmcblk1p1	/dev/block/mmcblk1			flags=display="Micro SD Card";storage;wipeingui;removable
+/external_sd	vfat		/dev/block/mmcblk0p1	/dev/block/mmcblk0			flags=display="Micro SD Card";storage;wipeingui;removable
 /usb_otg		auto		/dev/block/sda1 		/dev/block/sda				flags=display="USB OTG";storage;wipeingui;removable
