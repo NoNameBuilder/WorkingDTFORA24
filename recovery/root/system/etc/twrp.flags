@@ -10,7 +10,6 @@
 /optics			ext4		/dev/block/by-name/optics							flags=backup=1;flashimg;display="Optics"
 /prism			ext4		/dev/block/by-name/prism							flags=backup=1;flashimg;display="Prism"
 /metadata		ext4		/dev/block/platform/bootdevice/by-name/md_udc		flags=display="Metadata";wipeingui;wipeduringfactoryreset
-/data			auto		/dev/block/by-name/userdata							flags=length=-16384;fileencryption=aes-256-xts:aes-256-cts:v1
 /cache          ext4      	/dev/block/by-name/cache      	                flags=display="Cache";wipeingui;wipeduringfactoryreset
 
 # FOTA
@@ -51,4 +50,4 @@
 
 # External storage
 /external_sd	auto		/dev/block/mmcblk0p1	/dev/block/mmcblk0			flags=display="Micro SD Card";storage;wipeingui;removable
-/usb_otg		auto		/dev/block/sda1 		/dev/block/sdd1				flags=display="USB OTG";storage;wipeingui;removable
+/usb_otg		auto		/dev/block/sdd1 		/dev/block/sda				flags=display="USB OTG";storage;wipeingui;removable
