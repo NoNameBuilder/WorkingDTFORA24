@@ -9,7 +9,7 @@ The Galaxy A24 4G is a budget range smartphone from Samsung, Released 2023, Apti
 |GPU                 |Mali-G57 MC2                                                  |
 |Codename            |a24                                                           |
 |Memory              |6/8GB RAM                                                     |
-|Android Version     |13                                                            |
+|Android Version     |14                                                            |
 |Storage             |128/256GB                                                     |
 
 ## Situation
