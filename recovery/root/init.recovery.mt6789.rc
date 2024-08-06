@@ -1,3 +1,62 @@
 import /init.recovery.touch.rc
 import /mtk-plpath-utils.rc
 import /multidisabler-helper.rc
+
+on init
+# Permissions for LCD
+    chown system system /sys/class/backlight/panel/brightness
+
+    chown system radio /sys/class/lcd/panel/manufacture_code
+    chown system radio /sys/class/lcd/panel/lcd_type
+    chown system system /sys/class/lcd/panel/siop_enable
+    chown system system /sys/class/lcd/panel/temperature
+    chown system radio /sys/class/lcd/panel/mcd_mode
+    chown system system /sys/class/lcd/panel/lux
+    chown system media_rw /sys/class/lcd/panel/adaptive_control
+    chown system system /sys/devices/svc/OCTA/SVC_OCTA
+    chown system system /sys/devices/svc/OCTA/SVC_OCTA_CHIPID
+    chown system system /sys/devices/svc/OCTA/SVC_OCTA_DDI_CHIPID
+    chown system system /sys/class/lcd/panel/xtalk_mode
+    chown system system /sys/class/lcd/panel/mst
+    chown system system /sys/class/lcd/panel/poc
+    chown system system /sys/class/lcd/panel/gamma_flash
+    chown system system /sys/class/lcd/panel/gamma_check
+    chown system system /sys/class/lcd/panel/gct
+    chown system system /sys/class/lcd/panel/grayspot
+    chown system system /sys/class/lcd/panel/self_mask
+    chown system system /sys/class/lcd/panel/self_mask_check
+    chown system system /sys/class/lcd/panel/mafpc_check
+    chown system system /sys/class/lcd/panel/irc_mode
+    chown system system /sys/class/lcd/panel/isc_defect
+    chown system system /sys/class/lcd/panel/spi_if_sel
+    chown system system /sys/class/lcd/panel/ux_color
+    chown system system /sys/class/lcd/panel/ccd_state
+    chown system system /sys/class/lcd/panel/dsc_crc
+    chown system system /sys/class/lcd/panel/ecc
+    chown system radio /sys/class/lcd/panel/conn_det
+    chown system system /sys/class/lcd/panel/vrr
+    chown system system /sys/class/lcd/panel/alpm
+    chown system system /sys/class/lcd/panel/brt_avg
+    chown system system /sys/class/lcd/panel/mask_brightness
+    chown system system /sys/class/lcd/panel/actual_mask_brightness
+    chown system radio /sys/class/lcd/panel/error_flag
+    chown system system /sys/class/lcd/panel/dpci
+    chown system system /sys/class/lcd/panel/dpci_dbg
+    chown system system /sys/class/lcd/panel/dpui
+    chown system system /sys/class/lcd/panel/dpui_dbg
+
+    chmod 0444 /proc/mtkfb
+    chown system system /dev/sec_display_debug
+
+# Permissions for MDNIE
+    chown system media_rw /sys/class/mdnie/mdnie/mode
+    chown system media_rw /sys/class/mdnie/mdnie/scenario
+    chown system system /sys/class/mdnie/mdnie/accessibility
+    chown system system /sys/class/mdnie/mdnie/sensorRGB
+    chown system system /sys/class/mdnie/mdnie/whiteRGB
+    chown system system /sys/class/mdnie/mdnie/night_mode
+    chown system system /sys/class/mdnie/mdnie/light_notification
+    chown system system /sys/class/mdnie/mdnie/color_lens
+    chown system system /sys/class/mdnie/mdnie/bypass
+    chown system system /sys/class/mdnie/mdnie/mdnie_ldu
+    chown system system /sys/class/mdnie/mdnie/hdr
