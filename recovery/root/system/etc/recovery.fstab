@@ -8,6 +8,6 @@ odm                                                  /odm          erofs        
 vendor_dlkm                                          /vendor_dlkm        erofs        ro    avb,logical,first_stage_mount
 system_ext                                           /system_ext         erofs        ro    avb,logical,first_stage_mount
 
-/dev/block/platform/bootdevice/by-name/md_udc      /metadata     ext4        defaults                  wait,first_stage_mount
-/dev/block/platform/bootdevice/by-name/userdata	   /data         f2fs        defaults                  wait,length=-16384
-/dev/block/platform/bootdevice/by-name/misc	   /misc         emmc        defaults                  recoveryonly
+/dev/block/by-name/metadata      /metadata     ext4        defaults                  wait,first_stage_mount
+/dev/block/by-name/userdata	   /data         f2fs        noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678,whint_mode=fs-based,inlinecrypt	wait,check,,quota,latemount,,reservedsize=128M,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption,fsverity,fscompress
+/dev/block/by-name/misc	   /misc         emmc        defaults                  recoveryonly
