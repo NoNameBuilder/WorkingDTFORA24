@@ -71,12 +71,11 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: twrp_a24
-          files: | 
-            workspace/out/target/product/a24/recovery.img 
-            workspace/out/target/product/a24/*.zip 
-            workspace/out/target/product/a24/*vendor*.img 
-          name: ${{ inputs.DEVICE_NAME }} (TWRP) 
-          tag_name: ${{ github.run_id }} 
-          body: | 
-            Manifest: ${{ inputs.MANIFEST_BRANCH }} 
+        files: | 
+            workspace/out/target/product/a24/recovery.img
+            workspace/out/target/product/a24/*.zip
+            workspace/out/target/product/a24/*vendor*.img
+        tag_name: ${{ github.run_id }}
+        body: |
+            Manifest: ${{ inputs.MANIFEST_BRANCH }}
             Target: ${{ inputs.BUILD_TARGET }}.img
