@@ -11,7 +11,6 @@
 /prism			ext4		/dev/block/by-name/prism							flags=backup=1;flashimg;display="Prism"
 /metadata		ext4		/dev/block/by-name/metadata		flags=display="Metadata";wipeingui;wipeduringfactoryreset
 /cache          ext4      	/dev/block/by-name/cache      	                flags=display="Cache";wipeingui;wipeduringfactoryreset
-/storage		f2fs		/data/media/0						flags=display="Internal Storage";backup=1;
 
 # FOTA
 /dsp			emmc		/dev/block/by-name/dsp
