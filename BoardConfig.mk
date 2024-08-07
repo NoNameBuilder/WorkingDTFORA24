@@ -132,7 +132,7 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_MTP_DEVICE := "Galaxy A24"
 TW_LOAD_VENDOR_BOOT_MODULES := true
-TW_FRAMERATE := 70
+TW_FRAMERATE := 75
 TW_BACKUP_EXCLUSIONS := /data/fonts
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 
@@ -140,18 +140,11 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.
 TWRP_EVENT_LOGGING := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
-TARGET_USES_LOGD := true
 
 # Samsung things
 TW_USE_SAMSUNG_HAPTICS := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_NO_REBOOT_BOOTLOADER := true
-
-# Encryption
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
-BOARD_USES_METADATA_PARTITION := true
-TW_INCLUDE_FBE_METADATA_DECRYPT := true
 
 # Props and tools
 TW_NO_LEGACY_PROPS := true
