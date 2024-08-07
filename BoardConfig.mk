@@ -34,13 +34,15 @@ BOARD_HAS_MTK_HARDWARE := true
 MTK_HARDWARE := true
 
 # Display
-TARGET_SCREEN_DENSITY := 396
+TARGET_SCREEN_DENSITY := 450
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
+TW_MAX_BRIGHTNESS := 510
+TW_DEFAULT_BRIGHTNESS := 255
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := a24
 
-# Kernel
 # Kernel config
 BOARD_BOOTIMG_HEADER_VERSION := 2
 TARGET_KERNEL_ARCH := arm64
@@ -138,11 +140,14 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.
 TWRP_EVENT_LOGGING := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+TARGET_USES_LOGD := true
 
 # Samsung things
 TW_USE_SAMSUNG_HAPTICS := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_NO_REBOOT_BOOTLOADER := true
+TW_INCLUDE_CRYPTO := true
+BOARD_USES_METADATA_PARTITION := true
 
 # Props and tools
 TW_NO_LEGACY_PROPS := true
@@ -156,3 +161,4 @@ TW_INCLUDE_FUSE_EXFAT := true
 TW_INCLUDE_LPDUMP := true
 TW_INCLUDE_LPTOOLS := true
 TW_EXCLUDE_APEX := false
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone50/temp"
