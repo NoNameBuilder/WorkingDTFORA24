@@ -35,10 +35,9 @@ MTK_HARDWARE := true
 
 # Display
 TARGET_SCREEN_DENSITY := 450
-TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
-TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TW_MAX_BRIGHTNESS := 510
-TW_DEFAULT_BRIGHTNESS := 255
+TW_DEFAULT_BRIGHTNESS := 200
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := a24
@@ -126,7 +125,6 @@ PLATFORM_VERSION := 14.0
 # TWRP Configuration
 TW_THEME := portrait_hdpi
 TW_DEVICE_VERSION := GalaxyA24
-TW_DEFAULT_BRIGHTNESS := 250
 TW_EXTRA_LANGUAGES := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
@@ -135,10 +133,6 @@ TW_LOAD_VENDOR_BOOT_MODULES := true
 TW_FRAMERATE := 75
 TW_BACKUP_EXCLUSIONS := /data/fonts
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
-TW_EXCLUDE_TWRPAPP := true
-
-# Crypto
-TW_INCLUDE_CRYPTO := true
 
 # TWRP logs
 TWRP_EVENT_LOGGING := true
@@ -162,4 +156,3 @@ TW_INCLUDE_FUSE_EXFAT := true
 TW_INCLUDE_LPDUMP := true
 TW_INCLUDE_LPTOOLS := true
 TW_EXCLUDE_APEX := false
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone50/temp"
