@@ -35,7 +35,7 @@
 /persistent		emmc		/dev/block/by-name/persistent						flags=backup=1;display="Persistent"
 
 # CP Slot a.k.a baseband image
-/md1img			emmc		/dev/block/platform/bootdevice/by-name/md1img		flags=backup=1;display="Modem"
+/md1img			emmc		/dev/block/by-name/md1img		flags=backup=1;display="Modem"
 
 # Physical partitions - Backupable
 /boot			emmc		/dev/block/by-name/boot								flags=backup=1;display="Boot Image";flashimg=1
