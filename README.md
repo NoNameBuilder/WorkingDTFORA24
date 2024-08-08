@@ -13,9 +13,8 @@ The Galaxy A24 4G is a budget range smartphone from Samsung, Released 2023, Apri
 |Storage             |128/256GB                                                     |
 
 ## Situation
-- [X] Working colors
-- [X] Backup to internal/microSD
-- [X] Restore from internal/microSD
+- [X] Backup to internal
+- [X] Restore from internal
 - [X] /data encryption (multidisabler)
 
 Medium checks
