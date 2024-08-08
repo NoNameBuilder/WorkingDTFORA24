@@ -44,9 +44,9 @@
 /prism_image	emmc		/dev/block/by-name/prism							flags=backup=1;display="Prism Image";flashimg=1
 /up_param		emmc		/dev/block/by-name/up_param							flags=backup=1;display="Logo";flashimg=1
 
-/vbmeta     	   emmc      /dev/block/platform/bootdevice/by-name/vbmeta    		 flags=backup=1;display="Vbmeta";flashimg=1
-/vbmeta_system     emmc      /dev/block/platform/bootdevice/by-name/vbmeta_system    flags=backup=1;display="Vbmeta System";flashimg=1
-/vbmeta_vendor     emmc      /dev/block/platform/bootdevice/by-name/vbmeta_vendor    flags=backup=1;display="Vbmeta Vendor";flashimg=1
+/vbmeta     	   emmc      /dev/block/by-name/vbmeta    		 flags=backup=1;display="Vbmeta";flashimg=1
+/vbmeta_system     emmc      /dev/block/by-name/vbmeta_system    flags=backup=1;display="Vbmeta System";flashimg=1
+/vbmeta_vendor     emmc      /dev/block/by-name/vbmeta_vendor    flags=backup=1;display="Vbmeta Vendor";flashimg=1
 
 # External storage
 /external_sd	auto		/dev/block/mmcblk0p1	/dev/block/mmcblk0			flags=display="Micro SD Card";storage;wipeingui;removable
