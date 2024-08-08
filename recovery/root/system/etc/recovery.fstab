@@ -9,5 +9,5 @@ vendor_dlkm                                          /vendor_dlkm        erofs  
 system_ext                                           /system_ext         erofs        ro    avb,logical,first_stage_mount
 
 /dev/block/by-name/metadata                          /metadata	    ext4	            noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic,syncwait,check,formattable,first_stage_mount
-/dev/block/by-name/userdata                     	   /data         f2fs        noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678,whint_mode=fs-based,inlinecrypt	wait,check,quota,latemount,reservedsize=128M,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption,fsverity,fscompress
+/dev/block/by-name/userdata                     	   /data         auto        noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678,whint_mode=fs-based,inlinecrypt	wait,check,quota,latemount,reservedsize=128M,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption,fsverity,fscompress
 /dev/block/by-name/misc	                             /misc         emmc        defaults                  recoveryonly
