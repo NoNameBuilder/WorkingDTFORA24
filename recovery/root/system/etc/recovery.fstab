@@ -1,7 +1,7 @@
 #<src>                                              <mnt_point>   <type>      <mnt_flags and options>    <fs_mgr_flags>
-system                                               /system       erofs        ro    avb=vbmeta,logical,first_stage_mount,display="System erofs"
-system                                               /system       ext4        	ro    avb=vbmeta,logical,first_stage_mount,display="System ext4"
-system                                               /system       f2fs        	ro    avb=vbmeta,logical,first_stage_mount,display="System f2fs"
+system                                               /system       erofs        ro    avb=vbmeta,logical,first_stage_mount
+system                                               /system       ext4        	ro    avb=vbmeta,logical,first_stage_mount
+system                                               /system       f2fs        	ro    avb=vbmeta,logical,first_stage_mount
 vendor                                               /vendor       erofs        ro    avb,logical,first_stage_mount
 product                                              /product      erofs        ro    avb,logical,first_stage_mount
 odm                                                  /odm          erofs        ro    avb,logical,first_stage_mount
