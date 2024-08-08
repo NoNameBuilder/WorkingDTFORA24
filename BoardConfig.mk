@@ -132,7 +132,6 @@ TW_MTP_DEVICE := "Galaxy A24"
 TW_LOAD_VENDOR_BOOT_MODULES := true
 TW_FRAMERATE := 75
 TW_BACKUP_EXCLUSIONS := /data/fonts
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 
 # TWRP logs
 TWRP_EVENT_LOGGING := true
