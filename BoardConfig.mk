@@ -155,3 +155,9 @@ TW_INCLUDE_FUSE_EXFAT := true
 TW_INCLUDE_LPDUMP := true
 TW_INCLUDE_LPTOOLS := true
 TW_EXCLUDE_APEX := false
+
+# UI
+TW_STATUS_ICONS_ALIGN := center
+TW_CUSTOM_CPU_POS := 50
+TW_CUSTOM_CLOCK_POS := 300
+TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/battery/capacity
